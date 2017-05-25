@@ -1,0 +1,13 @@
+1995-2015
+
+Dependent:
+Life expectancy: http://data.worldbank.org/indicator/SP.DYN.LE00.IN?view=chart
+Infant mortality rate: http://data.worldbank.org/indicator/SP.DYN.IMRT.IN?view=chart
+
+
+Independent:
+GDP: http://data.worldbank.org/indicator/NY.GDP.MKTP.CD
+Aid from UN (Current US$): http://data.worldbank.org/indicator/DT.NFL.UNAI.CD?view=chart
+Public health expenditure (% of total health expenditure): http://data.worldbank.org/indicator/SH.XPD.PUBL?year=1995
+School enrollment:
+% population access to sanitation:
