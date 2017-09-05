@@ -59,11 +59,12 @@ def clean(file_name, value_name):
 
 
 # Cleaning all datasets
-clean('lifeexpectancy', 'Life Expectancy')
-clean('infantmortality', 'Infant Mortality')
-clean('gdp', 'GDP')
-clean('netaid', 'Net Aid')
-clean('healthexpenditure', 'Health Expenditure')
-clean('militaryexpenditure', 'Military Expenditure')
-clean('educationexpenditure', 'Education Expenditure')
-clean('researchexpenditure', 'Research Expenditure')
+cleanDataset = {'lifeexpectancy': 'Life Expectancy',
+'infantmortality': 'Infant Mortality', 'gdp': 'GDP'.
+'netaid': 'Net Aid', 'healthexpenditure': 'Health Expenditure',
+'militaryexpenditure': 'Military Expenditure',
+'educationexpenditure': 'Education Expenditure',
+'researchexpenditure': 'Research Expenditure'}
+
+for key, value in cleanDataset.items():
+	clean(key, value)
