@@ -4,3 +4,4 @@ Observing government influence (GDP, foreign aid, public health/education/milita
 Processed data available in the 0_preprocessing folder.
 
 Exploratory data analysis can be found [here](https://github.com/junseo-park/public-health/blob/Brian's-branch/exploratory_stuff.ipynb).
+Models built can be found in the [iPython Notebook](public-health.ipynb)
