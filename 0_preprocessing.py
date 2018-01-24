@@ -24,15 +24,18 @@ to_remove = ['Arab World', 'Central Europe and the Baltics',
              'Latin America & the Caribbean (IDA & IBRD countries)',
              'Middle East & North Africa (IDA & IBRD countries)',
              'South Asia (IDA & IBRD)', 'Sub-Saharan Africa (IDA & IBRD countries)',
-             'Upper middle income', 'World']
+             'Upper middle income', 'World',
+             'American Samoa', 'Bermuda',  'Curacao', 'Cayman Islands', 'Dominica', 'Gibraltar', 'Isle of Man', 'St. Kitts and Nevis', 'Marshall Islands', 'Northern Mariana Islands', 'Nauru', 'San Marino', 'Serbia', 'Sint Maarten (Dutch part)', 'Seychelles', 'Turks and Caicos Islands', 'Tuvalu', 'British Virgin Islands', 'Palau']
+
+to_remove2 = ['American Samoa', 'Bermuda',  'Curacao', 'Cayman Islands', 'Dominica', 'Gibraltar', 'Isle of Man', 'St. Kitts and Nevis', 'Marshall Islands', 'Northern Mariana Islands', 'Nauru', 'San Marino', 'Serbia', 'Sint Maarten (Dutch part)', 'Seychelles', 'Turks and Caicos Islands', 'Tuvalu', 'British Virgin Islands', 'Palau']
 
 
 # Helper function to delete observations in a dataframe if the country
 # name is in the list of countries to remove
-def delete_rows(df):
+def delete_rows(df, list):
     # df: dataframe to be cleaned
     for i in range(len(df)):
-        if df.loc[i, 'Country Name'] in to_remove:
+        if df.loc[i, 'Country Name'] in list:
             df.drop(i, inplace=True)
 
     return df
@@ -49,7 +52,8 @@ def clean(file_name, value_name):
     df = pd.read_csv('data/' + file_name + '/' + file_name + '.csv', header=2)
 
     df = df.drop(['Indicator Name', 'Indicator Code', '2016'], axis=1)
-    df = delete_rows(df)
+    df = delete_rows(df, to_remove)
+    #df = delete_rows(df, to_remove2)
     df2 = pd.melt(df, id_vars=['Country Name', 'Country Code'],
                   var_name='Year', value_name=value_name)
     df2.replace(to_replace='Korea, Dem. People’s Rep.',
